@@ -1,6 +1,6 @@
 {
   "name": "@sdl-web/sdl-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Basic Data Provider that provides data to the elements in the default slot.  It also throws an event 'sdl-data-ready' when the data has been successfully received",
   "main": "index.js",
   "repository": "git+https://github.com/generic-web-components/sdl-data.git",
