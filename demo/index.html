@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>sdl-srch-bar demo</title>
+    <script type="module" src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script type="module" src="../src/components/sdl-data.js"></script>
+    <script type="module">
+      import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
+      import '@polymer/iron-demo-helpers/demo-snippet.js';
+      import '@polymer/paper-input/paper-input.js';
+      import '@polymer/iron-icons/iron-icons.js';
+      import '@polymer/iron-icon/iron-icon.js';
+      import '@vaadin/vaadin-combo-box';
+    </script>
+
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h1>Basic sdl-data demo -- with 'url'</h1>
+      <demo-snippet>
+        <template>         
+
+<!-- If using as a stand-alone-component:  use sdl-data-loader.js
+<script src="./node_modules/@sdl-web/sdl-data/build-component/sdl-data-loader.js"></script> -->
+
+<!-- If using in an existing build project:  use sdl-data.js directly-->
+<!-- <script type="import" src="@sdl-web/sdl-data/src/components/sdl-data.js"></script>  -->
+
+<!-- Now add sdl-data to html section -->
+<sdl-data name="combo1-data" id='combo1-data' url='./data/srch-data.txt' name="names">  
+    <vaadin-combo-box name="combo1" item-label-path="name" item-value-path="_id" label="Name"></vaadin-combo-box>
+</sdl-data>
+
+
+<!-- Finally, listen for change event -->
+<!-- <script>
+    $('document').ready(function(){
+
+      var comboData= document.querySelector('#combo1-data');
+      comboData.addEventListener("sdl-data-reaady", function(e) {
+        // Do something with the e.detail.payload here...
+      }, false);
+
+    });
+</script> -->
+
+        </template>
+      </demo-snippet>
+    </div>
+    <div id="message1"></div>
+    <br><br><br>
+
+
+
+ 
+    <script>
+    addEventListener('DOMContentLoaded', function(){ 
+
+    //    setTimeout(function(){ 
+          console.log("Start Listening...");
+        var data1 = document.querySelector('#combo1-data');
+
+          data1.addEventListener("sdl-data-ready", function(e) {
+            var message = document.querySelector('#message1');
+            message.innerHTML = "<b><u>'data-ready' event fired:</u></b>&nbsp;&nbsp;&nbsp;";
+            message.innerHTML += "<br>e.detail.name = " + JSON.stringify(e.detail.name);
+            message.innerHTML += "<br>e.detail.payload = " + JSON.stringify(e.detail.payload);
+          }, false);
+          
+      //  }, 1000);
+
+
+      }, false);
+
+    </script>
+  </body>
+</html>

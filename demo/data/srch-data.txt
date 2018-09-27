@@ -1,0 +1,24 @@
+{
+    "success": true,
+    "payload": [
+  {
+    "_id": "1",
+    "age": "11",
+    "eyeColor": "green",
+    "name": "Boy Blue",
+    "gender": "Male"
+  },{
+    "_id": "2",
+    "age": "22",
+    "eyeColor": "Blue",
+    "name": "Jack Spratt",
+    "gender": "Male"
+  },{
+    "_id": "3",
+    "age": "33",
+    "eyeColor": "Red",
+    "name": "Elmer Fudd",
+    "gender": "Male"
+  }
+  ]
+}
