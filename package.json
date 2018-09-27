@@ -1,6 +1,6 @@
 {
   "name": "@sdl-web/sdl-data",
-  "version": "1.0.26",
+  "version": "1.0.0",
   "description": "A Data Provider",
   "main": "index.js",
   "repository": "git+https://github.com/generic-web-components/sdl-data.git",
